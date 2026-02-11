@@ -15,6 +15,7 @@ import { Users } from './components/Users';
 function App() {
 	const [users, setUsers] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
+	const [searchValue, setSearchValue] = useState('');
 
 	useEffect(() => {
 		// Аналог как с сервера
@@ -25,10 +26,20 @@ function App() {
 			.catch((err) => console.error('Ошибка загрузки:', err)); // Всегда добавляй catch!
 	}, []);
 
+	function handleSearchInput(e) {
+		setSearchValue(e.target.value);
+		console.log(e.target.value);
+	}
+
 	return (
 		<Fragment>
 			<div className="App">
-				<Users items={users} isLoading={isLoading} />
+				<Users
+					items={users}
+					isLoading={isLoading}
+					searchValue={searchValue}
+					handleSearchInput={handleSearchInput}
+				/>
 				{/* <Success /> */}
 			</div>
 		</Fragment>
