@@ -1,7 +1,15 @@
 import { Skeleton } from './Skeleton';
 import { User } from './User';
 
-export const Users = ({ items, isLoading, searchValue, handleSearchInput }) => {
+export const Users = ({
+	items,
+	isLoading,
+	searchValue,
+	invitesUsers,
+	handleSearchInput,
+	handleInviteUser,
+	handleSendInvite,
+}) => {
 	// console.log(items.data);
 	return (
 		<>
@@ -13,7 +21,7 @@ export const Users = ({ items, isLoading, searchValue, handleSearchInput }) => {
 					value={searchValue}
 					onChange={handleSearchInput}
 					type="text"
-					placeholder="Найти пользователя..."
+					placeholder="Search user..."
 				/>
 			</div>
 			{isLoading ? (
@@ -39,11 +47,20 @@ export const Users = ({ items, isLoading, searchValue, handleSearchInput }) => {
 							}
 						})
 						.map((user) => (
-							<User key={user.email} {...user} />
+							<User
+								invitesUsers={invitesUsers}
+								handleInviteUser={handleInviteUser}
+								key={user.email}
+								{...user}
+							/>
 						))}
 				</ul>
 			)}
-			<button className="send-invite-btn">Отправить приглашение</button>
+			{invitesUsers.length > 0 && (
+				<button onClick={handleSendInvite} className="send-invite-btn">
+					Send invite
+				</button>
+			)}
 		</>
 	);
 };
