@@ -1,4 +1,6 @@
-export const Success = ({ invitesUsers }) => {
+import type { SuccessProps } from '../types';
+
+export const Success = ({ invitesUsers }: SuccessProps) => {
 	const count = invitesUsers.length;
 	return (
 		<div className="success-block">

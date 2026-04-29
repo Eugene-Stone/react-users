@@ -1,7 +1,14 @@
-export const User = ({ email, first_name, last_name, avatar, handleInviteUser, invitesUsers }) => {
-	const iconInvite = invitesUsers.includes(email) ? 'minus' : 'plus';
+import type { UserCardProps } from '../../types';
 
-	// console.log(iconInvite);
+export const User = ({
+	email,
+	first_name,
+	last_name,
+	avatar,
+	handleInviteUser,
+	invitesUsers,
+}: UserCardProps) => {
+	const iconInvite = invitesUsers.includes(email) ? 'minus' : 'plus';
 
 	return (
 		<li>
