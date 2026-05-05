@@ -14,6 +14,7 @@ export interface UsersProps {
 	searchValue: string;
 	invitesUsers: string[];
 	handleSearchInput: (e: ChangeEvent<HTMLInputElement>) => void;
+	// handleSearchInput: (e: React.ChangeEvent<HTMLInputElement>) => void; // Или так, тогда не нужен импорт ChangeEvent
 	handleInviteUser: (email: string) => void;
 	handleSendInvite: () => void;
 }

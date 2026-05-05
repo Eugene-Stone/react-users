@@ -1,16 +1,35 @@
-# React + Vite
+# React Users
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Приложение на React + Vite + TypeScript для просмотра списка пользователей и отправки приглашений.
 
-Currently, two official plugins are available:
+## Что делает проект
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Загружает список пользователей из `public/data/users.json`
+- Отображает карточки пользователей с аватаром, именем и email
+- Позволяет искать пользователей по имени или email
+- Добавлять/удалять пользователей в список приглашений
+- Отправлять приглашения и видеть экран успешной отправки
 
-## React Compiler
+## Технологии
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- Vite
+- TypeScript
+- Sass
+- ESLint
 
-## Expanding the ESLint configuration
+## Структура проекта
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `src/main.tsx` — точка входа приложения
+- `src/App.tsx` — главный компонент и логика состояния
+- `src/components/Users` — отображение списка пользователей и поиск
+- `src/components/Success.tsx` — экран успешной отправки
+- `public/data/users.json` — источник данных для пользователей
+
+## Как использовать
+
+1. Откройте приложение в браузере
+2. Введите имя или email в поле поиска
+3. Нажмите на плюс/минус, чтобы отметить пользователя для приглашения
+4. Нажмите кнопку `Send invite`
+5. На экране `Success` появится число приглашенных пользователей

@@ -1,7 +1,9 @@
+// import { FC } from 'react';
 import { Skeleton } from './Skeleton';
 import { User } from './User';
 import type { UsersProps } from '../../types';
 
+// export const Users: FC<UsersProps> = ({
 export const Users = ({
 	items,
 	isLoading,
